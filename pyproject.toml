@@ -1,0 +1,53 @@
+[build-system]
+requires = ["wheel", "setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []
+
+[project]
+name = "python-docx"
+version = "0.8.11"
+description = "Create and update Microsoft Word .docx files."
+keywords = ["docx", "office", "openxml", "word"]
+license = { file = "LICENSE"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.6",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.3",
+    "Programming Language :: Python :: 3.4",
+    "Topic :: Office/Business :: Office Suites",
+    "Topic :: Software Development :: Libraries",
+]
+
+dependencies = [
+    "behave>=1.2.3",
+    "flake8>=2.0",
+    "lxml>=3.1.0",
+    "mock>=1.0.1",
+    "pyparsing>=2.0.1",
+    "pytest>=2.5"
+]
+dynamic = ["readme"]
+
+[metadata]
+author = "Steve Canny"
+author-email = "python-docx@googlegroups.com"
+
+[tool.setuptools.dynamic]
+readme = { file = ["README.rst", "HISTORY.rst"]}
+
+[tool.setuptools.packages.find]
+where  = ["./"]
+exclude = ["tests", "tests.*"]
+
+[tool.setuptools.package-data]
+docx = ["templates/*.xml", "templates/*.docx"]
